@@ -1,0 +1,40 @@
+CREATE TABLE tablerestart(
+Student_ID int NOT NULL,
+Student_Name varchar(80) NOT NULL,
+Restart_City varchar(50),
+Graduation_Date datetime,
+PRIMARY KEY (Student_ID)
+); 
+/* Insert into table */
+INSERT INTO tablerestart(Student_ID, Student_Name, Restart_City, Graduation_Date)
+values(10, "Briana Lamprecht", "Big City", '2021-04-21 01:20:20'),
+(11, "Marylynn Glaspie", "Small City", '2021-04-21 01:20:20'),
+(12, "William Sprvill", "Medium City", '2021-04-21 01:20:20'),
+(13, "Jackelyn Gaccione", "Random City", '2021-04-21 01:20:20'),
+(14, "Zada Cromwell", "Smaller City", '2021-04-21 01:20:20'),
+(15, "Mathilde Soler", "Tiny City", '2021-04-21 01:20:20'),
+(16, "Tyisha Luechtefeld", "Very small City", '2021-04-21 01:20:20'),
+(17, "Trang Sweetman", "Large City", '2021-04-21 01:20:20'),
+(18, "Loni Bradish", "Tiny tiny City", '2021-04-21 01:20:20'),
+(19, "Pura Diana", "A City", '2021-04-21 01:20:20');
+/*Select all rows*/
+SELECT * from tablerestart;
+/* Create table cloud_practitioner and insert 5 names*/
+CREATE TABLE cloud_practitioner(
+    student_ID int NOT NULL,
+    Certification_Date datetime,
+    PRIMARY KEY (Student_ID)
+); 
+INSERT INTO cloud_practitioner(student_ID, Certification_Date)
+values(10, '2022-04-21 01:20:20'),
+(11, '2022-04-21 01:20:20'),
+(12, '2022-04-21 01:20:20'),
+(13, '2022-04-21 01:20:20'),
+(14, '2022-04-21 01:20:20');
+/*Select all rows in cloud_practitioner*/
+SELECT * from cloud_practitioner;
+/* Perform an inner join between the 2 tables created above and display student ID, Student Name, Certification Date */
+SELECT tablerestart.Student_ID, Student_Name, Graduation_Date, cloud_practitioner.student_ID, Certification_Date
+FROM tablerestart
+INNER JOIN cloud_practitioner
+ON cloud_practitioner.student_ID = tablerestart.Student_ID;
